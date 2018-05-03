@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:uno",
     "port": "COM3",
-    "sketch": "Clase6\\Clase61.ino"
+    "sketch": "Blink\\Blink.ino"
 }
