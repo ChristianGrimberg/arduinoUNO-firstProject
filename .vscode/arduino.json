@@ -1,5 +1,5 @@
 {
+    "port": "/dev/ttyACM0",
     "board": "arduino:avr:uno",
-    "port": "COM3",
-    "sketch": "Blink/Blink.ino"
+    "sketch": "Blink/blink.ino"
 }

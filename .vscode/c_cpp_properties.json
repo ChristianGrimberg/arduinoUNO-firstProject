@@ -1,7 +1,23 @@
 {
     "configurations": [
         {
-            "name": "Arduino",
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/csgrimberg/.arduino15/packages/arduino/tools/**",
+                "/home/csgrimberg/.arduino15/packages/arduino/hardware/avr/1.6.21/**",                
+                "/home/csgrimberg/.arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/avr/include",
+                "/usr/share/arduino/tools/**",
+                "/usr/share/arduino/hardware/arduino/avr/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "Win64",
             "includePath": [
                 "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
                 "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr",
