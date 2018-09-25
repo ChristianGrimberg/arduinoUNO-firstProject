@@ -1,0 +1,53 @@
+Codificar 1001101 en paridad impar HAMING
+=========================================
+* Se colocan los valores en:
+         1       0   0   1        1    0    1
+--- --- --- --- --- --- --- ---- ---- ---- ----
+001 010 011 100 101 110 111 1000 1001 1010 1011
+1   2   3   4   5   6   7   8    9    10   11
+P1  P2  D1  P3  D2  D3  D4  P4   D5   D6   D7
+
+En los bits de paridad se coloca el bit 0 o 1 para que hay paridad impar
+1     1  0  1  1  1
+P1 => D1 D2 D4 D5 D7       Donde esta el 1 en el ultimo lugar 001
+0     1  0  1  0  1
+P2 => D1 D3 D4 D6 D7       Donde esta el 1 en el anteultimo lugar 010
+0     0  0  1
+P3 => D2 D3 D4             Donde esta el 1 en el primer lugar 100
+1     1  0  1
+P4 => D5 D6 D7             Donde esta el 1 en el primer lugar 1000
+
+* Se coloca el resultado de los bits de paridad
+
+ 1   0   1   0   0   0   1   1    1    0    1
+--- --- --- --- --- --- --- ---- ---- ---- ----
+001 010 011 100 101 110 111 1000 1001 1010 1011
+1   2   3   4   5   6   7   8    9    10   11
+P1  P2  D1  P3  D2  D3  D4  P4   D5   D6   D7
+
+* Quedó codificado en Haming 10100011101 con control de errores en paridad impar
+
+Decodificar 10100001101 en paridad impar HAMING
+===============================================
+
+*  Se colocan los valores en el lugar correspondiente
+
+ 1   0   1   0   0   0   0   1    1    0    1
+--- --- --- --- --- --- --- ---- ---- ---- ----
+001 010 011 100 101 110 111 1000 1001 1010 1011
+1   2   3   4   5   6   7   8    9    10   11
+P1  P2  D1  P3  D2  D3  D4  P4   D5   D6   D7
+
+* Coloco los valores segun los grupos de paridad y analizo la paridad, x si esta mal, / si esta bien
+
+1     1  0  0  1  1        x        1 (si esta mal es uno)
+P1 => D1 D2 D4 D5 D7
+0     1  0  0  0  1        x        1 (si esta mal es uno)
+P2 => D1 D3 D4 D6 D7
+0     0  0  0              x        1 (si esta mal es uno)
+P3 => D2 D3 D4
+1     1  0  1              /        0 (Si esta bien es cero)
+P4 => D5 D6 D7
+
+Entonces de abajo hacia arriba = 0111b = 7d
+El dato que esta mal es el lugar 7 que es 0 y debería ir un 1 (ya que hay dos alternativas en binario)
